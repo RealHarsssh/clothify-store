@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const trendingProducts = [
   { id: '1', title: 'Streetstyle Jacket', image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=200&q=80' },
@@ -16,7 +17,7 @@ export default function ProductSlider({ section }: { section: string }) {
     <div className="flex gap-6 overflow-x-auto pb-2">
       {products.map((item) => (
         <div key={item.id} className="min-w-[180px] bg-white rounded-lg shadow p-4 flex flex-col items-center">
-          <img src={item.image} alt={item.title} className="w-24 h-24 object-cover rounded mb-2" />
+          <Image src={item.image} alt={item.title} width={96} height={96} className="object-cover rounded mb-2" />
           <div className="font-semibold text-base mb-1">{item.title}</div>
         </div>
       ))}

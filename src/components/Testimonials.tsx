@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -41,7 +42,7 @@ export default function Testimonials() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {testimonials.map((review) => (
           <div key={review.id} className="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center">
-            <img src={review.avatar} alt={review.name} className="w-16 h-16 rounded-full mb-2 object-cover" />
+            <Image src={review.avatar} alt={review.name} width={64} height={64} className="rounded-full mb-2 object-cover" />
             <div className="font-semibold text-lg mb-1">{review.name}</div>
             <StarRating rating={review.rating} />
             <p className="text-gray-600 mt-2">{review.text}</p>

@@ -5,7 +5,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 interface Product {
   id: string;
   title: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 interface WishlistContextType {
